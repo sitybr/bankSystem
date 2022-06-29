@@ -2,15 +2,20 @@
 
 class Account
 {
-    private string $docHolder;
-    private string $nameHolder;
-    private float $balance = 0;
+    private string $holderDoc;
+    private string $holderName;
+    private float $balance;
+    private static $numberOfAccounts = 0;
 
 
-    public function __construct(string $docHolder, string $nameHolder)
+    public function __construct(string $holderDoc, string $holderName)
     {
-        $this->docHolder = $docHolder;
-        $this->nameHolder = $nameHolder;
+        $this->holderDoc = $holderDoc;
+        $this->holderName = $holderName;
+        $this->holderNameValidate($holderName);
+        $this->balance = 0;
+
+        self::$numberOfAccounts ++;
     }
 
     public function withdraw(float $amountToWithdraw): void
@@ -33,7 +38,7 @@ class Account
         $this->balance += $amountToDeposit;
     }
 
-    public function transfer($amountToTransfer, $accountToTransfer): void
+    public function transfer(float $amountToTransfer, $accountToTransfer): void
     {
         if ($amountToTransfer > $this->balance) {
             echo "Balance unavalaiable";
@@ -44,20 +49,36 @@ class Account
         $accountToTransfer->deposit($amountToTransfer);
     }
 
-    public function getDocHolder(): string
+    public function getHolderDoc(): string
     {
-        return $this->docHolder;
+        return $this->holderDoc;
     }
-    
-    public function getNameHolder(): string
+
+    public function getHolderName(): string
     {
-        return $this->nameHolder;
+        return $this->holderName;
     }
 
     public function getBalance(): float
     {
         return $this->balance;
     }
+
+    private function holderNameValidate(string $holderName)
+    {
+
+        if (strlen($holderName) < 5) {
+            echo "The name needs at least 5 letters.";
+            exit();
+        }
+    }
+
+    public static function getNumberOfAccounts(): int
+    {
+        return self::$numberOfAccounts;
+    }
+
+
 
 
 
