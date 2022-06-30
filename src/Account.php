@@ -1,20 +1,16 @@
 <?php
 
 class Account
-{
-    private string $holderDoc;
-    private string $holderName;
+{   
+    private Holder $holder;
     private float $balance;
     private static $numberOfAccounts = 0;
 
 
-    public function __construct(string $holderDoc, string $holderName)
+    public function __construct($holder)
     {
-        $this->holderDoc = $holderDoc;
-        $this->holderName = $holderName;
-        $this->holderNameValidate($holderName);
+        $this->holder = $holder;        
         $this->balance = 0;
-
         self::$numberOfAccounts ++;
     }
 
@@ -49,35 +45,27 @@ class Account
         $accountToTransfer->deposit($amountToTransfer);
     }
 
-    public function getHolderDoc(): string
-    {
-        return $this->holderDoc;
-    }
-
-    public function getHolderName(): string
-    {
-        return $this->holderName;
-    }
-
+    
     public function getBalance(): float
     {
         return $this->balance;
     }
 
-    private function holderNameValidate(string $holderName)
-    {
-
-        if (strlen($holderName) < 5) {
-            echo "The name needs at least 5 letters.";
-            exit();
-        }
-    }
-
+   
     public static function getNumberOfAccounts(): int
     {
         return self::$numberOfAccounts;
     }
 
+    public function getHolderName(): string
+    {
+        return $this->holder->getName();
+    }
+
+    public function getHolderDoc(): string
+    {
+        return $this->holder->getDoc();
+    }
 
 
 
