@@ -2,11 +2,11 @@
 
 class Holder
 {
-private string $name;
-private string $doc;
+    private string $name;
+    private Doc $doc;
 
 
-public function __construct(string $name, string $doc)
+public function __construct(string $name, Doc $doc)
 {
     $this->name = $name;
     $this->doc = $doc;
@@ -14,14 +14,14 @@ public function __construct(string $name, string $doc)
 
 }
 
-public function getName(): string
+public function getName(): String
 {
     return $this->name;
 }
 
-public function getDoc(): string
+public function getDoc(): String
 {
-    return $this->doc;
+    return $this->doc->getDoc();
 }
 
 public function nameValidate(string $name): void

@@ -1,7 +1,7 @@
 <?php
 
 class Account
-{   
+{
     private Holder $holder;
     private float $balance;
     private static $numberOfAccounts = 0;
@@ -9,9 +9,9 @@ class Account
 
     public function __construct($holder)
     {
-        $this->holder = $holder;        
+        $this->holder = $holder;
         $this->balance = 0;
-        self::$numberOfAccounts ++;
+        self::$numberOfAccounts++;
     }
 
     public function withdraw(float $amountToWithdraw): void
@@ -45,13 +45,13 @@ class Account
         $accountToTransfer->deposit($amountToTransfer);
     }
 
-    
+
     public function getBalance(): float
     {
         return $this->balance;
     }
 
-   
+
     public static function getNumberOfAccounts(): int
     {
         return self::$numberOfAccounts;
@@ -66,8 +66,4 @@ class Account
     {
         return $this->holder->getDoc();
     }
-
-
-
-
 }
