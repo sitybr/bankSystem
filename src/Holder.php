@@ -4,22 +4,24 @@ class Holder
 {
     private string $name;
     private Doc $doc;
+    private Address $address;
 
 
-public function __construct(string $name, Doc $doc)
+public function __construct(string $name, Doc $doc, Address $address)
 {
     $this->name = $name;
     $this->doc = $doc;
+    $this->address = $address;
     $this->nameValidate($name);
 
 }
 
-public function getName(): String
+public function getName(): string
 {
     return $this->name;
 }
 
-public function getDoc(): String
+public function getDoc(): string
 {
     return $this->doc->getDoc();
 }
@@ -32,6 +34,25 @@ public function nameValidate(string $name): void
     }
 }
 
+public function getAddressCity(): string
+{
+    return $this->address->getCity();
+}
+
+public function getAddressStreet(): string
+{
+    return $this->address->getStreet();
+}
+
+public function getAddressNeighborhood(): string
+{
+    return $this->address->getNeighborhood();
+} 
+
+public function getAddressNumber(): string
+{
+    return $this->address->getNumber();
+}
 
 
 
