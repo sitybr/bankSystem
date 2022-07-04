@@ -1,5 +1,6 @@
 <?php
 
+require 'Person.php';
 require 'Account.php';
 require 'Address.php';
 require 'Holder.php';
