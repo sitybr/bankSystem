@@ -7,15 +7,19 @@ Class Employee extends Person
 
     public function __construct(string $name, Doc $doc, string $role )
     {
-        $this->name = $name;
-        $this->nameValidate($name);
-        $this->doc = $doc;
+        parent::__construct($name, $doc );      
         $this->role = $role;
     }    
 
     public function getRole(): string
     {
         return $this->role;
+    }
+
+    public function changeName($name): void
+    {
+        $this->name = $name;
+        $this->nameValidate($name);
     }
 
     
