@@ -9,9 +9,9 @@ class Person
 
     public function __construct(string $name, Doc $doc)
     {
-        $this->name = $name;
-        $this->nameValidate($name);
+        $this->name = $name;        
         $this->doc = $doc;
+        
     }
 
 
@@ -19,11 +19,11 @@ class Person
     {
         return $this->name;
     }
-
+    
     public function nameValidate(string $name): void
     {
         if (strlen($name) < 5) {
-            'The name needs at least 5 letters.';
+            echo 'The name needs at least 5 letters.';
             exit();
         }
     }

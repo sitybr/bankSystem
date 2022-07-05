@@ -8,6 +8,7 @@ Class Employee extends Person
     public function __construct(string $name, Doc $doc, string $role )
     {
         $this->name = $name;
+        $this->nameValidate($name);
         $this->doc = $doc;
         $this->role = $role;
     }    
@@ -16,5 +17,7 @@ Class Employee extends Person
     {
         return $this->role;
     }
+
+    
 
 }

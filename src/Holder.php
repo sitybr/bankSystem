@@ -8,9 +8,9 @@ class Holder extends Person
     public function __construct(string $name, Doc $doc, Address $address)
     {
         $this->name = $name;
+        $this->nameValidate($name);
         $this->doc = $doc;
-        $this->address = $address;
-        
+        $this->address = $address;        
     }
 
     public function getAddress(): Address
