@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 class Address
 {
     private string $city;

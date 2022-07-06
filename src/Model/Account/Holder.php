@@ -1,5 +1,7 @@
 <?php
 
+namespace Model\Account;
+
 class Holder extends Person
 {
     private Address $address;

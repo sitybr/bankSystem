@@ -1,5 +1,7 @@
 <?php
 
+namespace Model\Account;
+
 class Account
 {
     private Holder $holder;
