@@ -1,13 +1,18 @@
 <?php
 
-require 'Person.php';
-require 'Account.php';
-require 'Address.php';
-require 'Holder.php';
-require 'Doc.php';
+require_once 'autoload.php';
 
+use BankSystem\Model\Person;
+use BankSystem\Model\Address;
+use BankSystem\Model\Doc;
+use BankSystem\Model\Account\Account;
+use BankSystem\Model\Account\Holder;
+
+$doc = new Doc('000.000.000-00');
+$holder = new Holder('Luke Skywalker',$doc, $address);
 $address = new Address('Fake City','Street Fake','Fakeland','154-B');
-$conta1 = new Account(new Holder('Luke Skywalker',new Doc('000.000.000-00'),$address));
+
+$conta1 = new Account($holder);
 
 $conta1->deposit(500);
 

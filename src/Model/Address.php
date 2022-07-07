@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace BankSystem\Model;
 
 class Address
 {

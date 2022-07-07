@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace BankSystem\Model;
 
 Class Employee extends Person
 {

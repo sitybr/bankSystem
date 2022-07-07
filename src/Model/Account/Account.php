@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\Account;
+namespace BankSystem\Model\Account;
 
 class Account
 {

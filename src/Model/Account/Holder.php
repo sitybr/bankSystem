@@ -1,6 +1,9 @@
 <?php
 
-namespace Model\Account;
+namespace BankSystem\Model\Account;
+use BankSystem\Model\Person;
+use BankSystem\Model\Address;
+use BankSystem\Model\Doc;
 
 class Holder extends Person
 {
