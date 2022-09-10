@@ -5,7 +5,7 @@ namespace BankSystem\Model\Account;
 class Account
 {
     private Holder $holder;
-    private float $balance;
+    protected float $balance;
     private static $numberOfAccounts = 0;
 
 
@@ -17,13 +17,15 @@ class Account
     }
 
     public function withdraw(float $amountToWithdraw): void
-    {
-        if ($amountToWithdraw > $this->balance) {
+    {   
+        $withdrawFee = $amountToWithdraw * 0.05;
+        $ammountWithFee = $amountToWithdraw + $withdrawFee;
+        if ($ammountWithFee > $this->balance) {
             echo "Balance unavaiable";
             return;
         }
 
-        $this->balance -= $amountToWithdraw;
+        $this->balance -= $ammountWithFee;
     }
 
     public function deposit(float $amountToDeposit): void
