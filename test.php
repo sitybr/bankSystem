@@ -11,14 +11,11 @@ use BankSystem\Model\Account\SavingsAccount;
 use BankSystem\Model\Account\CheckingAccount;
 use BankSystem\Model\Account\Holder;
 use BankSystem\Model\Employee;
+use BankSystem\Service\BonusCalculation;
 
-
-$account = new CheckingAccount(
-    new Holder('Luke Skywalker',
-                new Doc('000.000.000-00'),  
-                new Address('London','Oxford Street','Oxford','100'))
-);
-
-$account->deposit(500);
-$account->withdraw(100);
-echo $account->getBalance();
+$one = new Employee('Lucas', new Doc('012.345.678-10'), 'Developer', 1000);
+$two = new Employee('Lucas', new Doc('012.345.678-10'), 'Developer', 3000);
+$bonus = new BonusCalculation();
+$bonus->addBonusTo($one);
+$bonus->addBonusTo($two);
+echo $one->getName();

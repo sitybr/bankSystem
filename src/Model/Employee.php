@@ -2,16 +2,18 @@
 
 namespace BankSystem\Model;
 
-Class Employee extends Person
+class Employee extends Person
 {
-    
-    private string $role;
 
-    public function __construct(string $name, Doc $doc, string $role )
+    private string $role;
+    private float $salary;
+
+    public function __construct(string $name, Doc $doc, string $role, float $salary)
     {
-        parent::__construct($name, $doc );      
+        parent::__construct($name, $doc);
         $this->role = $role;
-    }    
+        $this->salary = $salary;
+    }
 
     public function getRole(): string
     {
@@ -24,6 +26,13 @@ Class Employee extends Person
         $this->nameValidate($name);
     }
 
-    
+    public function getSalary(): float
+    {
+        return $this->salary;
+    }
 
+    public function BonusCalculation(): float
+    {
+        return $this->salary * 0.1;
+    }
 }
