@@ -2,11 +2,11 @@
 
 namespace BankSystem\Model\Account;
 
-class SavingsAccount extends Account
+class CheckingAccount extends Account
 {
 
     protected function withdrawTax(): float
     {
-        return 0.03;
+        return 0.05;
     }
 }

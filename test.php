@@ -8,11 +8,12 @@ use BankSystem\Model\Address;
 use BankSystem\Model\Doc;
 use BankSystem\Model\Account\Account;
 use BankSystem\Model\Account\SavingsAccount;
+use BankSystem\Model\Account\CheckingAccount;
 use BankSystem\Model\Account\Holder;
 use BankSystem\Model\Employee;
 
 
-$account = new SavingsAccount(
+$account = new CheckingAccount(
     new Holder('Luke Skywalker',
                 new Doc('000.000.000-00'),  
                 new Address('London','Oxford Street','Oxford','100'))

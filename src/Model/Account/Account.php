@@ -2,7 +2,7 @@
 
 namespace BankSystem\Model\Account;
 
-class Account
+abstract class Account
 {
     private Holder $holder;
     protected float $balance;
@@ -18,7 +18,7 @@ class Account
 
     public function withdraw(float $amountToWithdraw): void
     {   
-        $withdrawFee = $amountToWithdraw * 0.05;
+        $withdrawFee = $amountToWithdraw * $this->withdrawTax();
         $ammountWithFee = $amountToWithdraw + $withdrawFee;
         if ($ammountWithFee > $this->balance) {
             echo "Balance unavaiable";
@@ -70,4 +70,6 @@ class Account
     {
         return $this->holder->getDoc();
     }
+
+   abstract protected function withdrawTax():float;
 }
