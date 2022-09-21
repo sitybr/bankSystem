@@ -1,8 +1,11 @@
 <?php
 
-namespace BankSystem\Model;
+namespace BankSystem\Model\Employee;
 
-class Employee extends Person
+use BankSystem\Model\Person;
+use BankSystem\Model\Doc;
+
+abstract class Employee extends Person
 {
 
     private string $role;
@@ -31,8 +34,6 @@ class Employee extends Person
         return $this->salary;
     }
 
-    public function BonusCalculation(): float
-    {
-        return $this->salary * 0.1;
-    }
+    abstract public function BonusCalculation();
+    
 }

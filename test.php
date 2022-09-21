@@ -6,16 +6,16 @@ require_once 'autoload.php';
 use BankSystem\Model\Person;
 use BankSystem\Model\Address;
 use BankSystem\Model\Doc;
-use BankSystem\Model\Account\Account;
-use BankSystem\Model\Account\SavingsAccount;
-use BankSystem\Model\Account\CheckingAccount;
-use BankSystem\Model\Account\Holder;
-use BankSystem\Model\Employee;
+use BankSystem\Model\Account\{Account,CheckingAccount,Holder,SavingsAccount};
+use BankSystem\Model\Employee\{Developer,Director,Employee,Manager};
 use BankSystem\Service\BonusCalculation;
 
-$one = new Employee('Lucas', new Doc('012.345.678-10'), 'Developer', 1000);
-$two = new Employee('Lucas', new Doc('012.345.678-10'), 'Developer', 3000);
+$one = new Developer('Lucas', new Doc('012.345.678-10'), 'Developer', 1000);
+$two = new Director('Lucas', new Doc('012.345.678-10'), 'Director', 1000);
+$three = new Manager('Lucas', new Doc('012.345.678-10'), 'Manager', 1000);
 $bonus = new BonusCalculation();
 $bonus->addBonusTo($one);
 $bonus->addBonusTo($two);
-echo $one->getName();
+$bonus->addBonusTo($three);
+echo $bonus->getTotalBonus();
+

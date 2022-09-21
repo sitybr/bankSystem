@@ -2,11 +2,11 @@
 
 namespace BankSystem\Service;
 
-use BankSystem\Model\Employee;
+use BankSystem\Model\Employee\Employee;
 
 class BonusCalculation
 {
-    private $totalBonus = 0;
+    private $totalBonus = 0; 
 
     public function addBonusTo(Employee $employee): void
     {
