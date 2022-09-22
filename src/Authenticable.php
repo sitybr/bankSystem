@@ -4,5 +4,5 @@ namespace BankSystem;
 
 interface Authenticable
 {
-    public function canAuthenticate(string $password):string ;
+    public function canAuthenticate(string $password):bool ;
 }

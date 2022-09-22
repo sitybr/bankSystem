@@ -12,7 +12,7 @@ class Developer extends Employee implements Authenticable
         
     }
     
-    public function canAuthenticate(string $password):string
+    public function canAuthenticate(string $password):bool
     {
         return $password === '1234';
     }
