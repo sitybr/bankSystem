@@ -8,19 +8,12 @@ use BankSystem\Model\Doc;
 abstract class Employee extends Person
 {
 
-    private string $role;
     private float $salary;
 
-    public function __construct(string $name, Doc $doc, string $role, float $salary)
+    public function __construct(string $name, Doc $doc, float $salary)
     {
-        parent::__construct($name, $doc);
-        $this->role = $role;
+        parent::__construct($name, $doc);        
         $this->salary = $salary;
-    }
-
-    public function getRole(): string
-    {
-        return $this->role;
     }
 
     public function changeName($name): void

@@ -2,7 +2,9 @@
 
 namespace BankSystem\Model\Employee;
 
-class Developer extends Employee
+use BankSystem\Authenticable;
+
+class Developer extends Employee implements Authenticable
 {
     public function BonusCalculation():float
     {        
@@ -10,4 +12,8 @@ class Developer extends Employee
         
     }
     
+    public function canAuthenticate(string $password):string
+    {
+        return $password === '1234';
+    }
 }
