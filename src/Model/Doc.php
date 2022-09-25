@@ -2,7 +2,7 @@
 
 namespace BankSystem\Model;
 
-class Doc
+final class Doc
 {
     private string $doc;
 

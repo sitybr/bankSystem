@@ -2,6 +2,8 @@
 
 namespace BankSystem\Model;
 
+use StringBackedEnum;
+
 class Address
 {
     private string $city;
@@ -35,5 +37,10 @@ class Address
     public function getNumber(): string
     {
         return $this->number;
+    }
+
+    public function __toString(): string
+    {
+        return "{$this->street},{$this->number},{$this->neighborhood},{$this->city}";
     }
 }

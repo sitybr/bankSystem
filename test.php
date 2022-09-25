@@ -16,7 +16,8 @@ $developer = new Developer('Lucas', new Doc('012.345.678-10'),1000);
 $director = new Director('Lucas', new Doc('012.345.678-10'), 1000);
 $manager = new Manager('Lucas', new Doc('012.345.678-10'), 1000);
 
-$authenticator = new Authenticator();
-$authenticator->tryLogin($developer,'1234');
+$address = new Address('TestLand','Test street','Test garden','71G');
+
+echo $address;
 
 
